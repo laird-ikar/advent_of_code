@@ -72,7 +72,6 @@ def main():
 					min(d[0][1], max(d[0][0], src_end))]
 				after = [min(d[0][1], max(d[0][0], src_end)), d[0][1]]
 				overlaping = [dest_start + overlaping[0] - src_start, dest_start + overlaping[1] - src_start]
-				print(f"With the range {src_start} to {src_end}, {d[0]} becomes {before if before[0] != before[1] else []}, {overlaping if overlaping[0] != overlaping[1] else []}, {after if after[0] != after[1] else []}")
 				if before[0] != before[1]:
 					next_data.append([before, 0])
 				if overlaping[0] != overlaping[1]:
@@ -80,7 +79,6 @@ def main():
 				if after[0] != after[1]:
 					next_data.append([after, 0])
 			data = next_data.copy()
-			print(f"Resulting in {data}")
 		print(min([d[0][0] for d in data]))
 
 if __name__ == "__main__":
